@@ -1,8 +1,8 @@
-import { Server } from "node:http"
-import { CHAT_EVENTS } from "shared/constants"
-import { Socket } from "socket.io"
-import { messages } from "models/message.model"
-import { getUserName } from "models/user.model"
+
+import { CHAT_EVENTS } from "@constants/constants"
+import { Server, Socket } from "socket.io"
+import  { getUserName } from "@models/user.model"
+import { messages } from "@models/message.model"
 
 
 export const  registerChatEvents = (io:Server,socket:Socket) : void =>{
@@ -23,10 +23,26 @@ export const  registerChatEvents = (io:Server,socket:Socket) : void =>{
         text,
         time:new Date()
       }
+      console.log("newmessage",newMessage)
       
       messages.push(newMessage);
       
       io.emit(CHAT_EVENTS.NEW_MESSAGES,newMessage)
 
+    });
+    
+    
+    
+    socket.on(CHAT_EVENTS.START_TYPING,(isTyping:boolean)=>{
+      const username = getUserName(socket.id)
+      
+      if(!username) return
+      
+      
+    
+      socket.broadcast.emit(CHAT_EVENTS.TYPING,{
+        username,
+        isTyping
+      })
     })
 }

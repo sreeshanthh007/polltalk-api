@@ -1,8 +1,9 @@
 
 
 import { Server } from "socket.io"
-
 import {Server as HttpServer} from "http"
+import { registerSocketHandlers } from "@handlers/socket.handler";
+
 
 export const SocketServer = (httpServer:HttpServer) : Server =>{
   
@@ -13,11 +14,10 @@ export const SocketServer = (httpServer:HttpServer) : Server =>{
       }
     });
     
-    io.on("connection",()=>{
+    io.on("connection",(socket)=>{
       console.log("socket connected successfully")
+      registerSocketHandlers(io,socket)
     });
-    
-    
     
     return io
 }

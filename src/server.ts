@@ -1,9 +1,10 @@
 
 import express from "express"
 import cors from "cors"
-import http, { METHODS } from "http"
+import http from "http"
 import dotenv from "dotenv"
 import { SocketServer } from "websocket/socket.server"
+
 
 
 dotenv.config()

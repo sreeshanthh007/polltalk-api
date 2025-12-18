@@ -10,7 +10,10 @@
     "paths": {
       "@controllers/*":["controllers/*"],
       "@socket/*":["socket/*"],
-      "@socketEvents/*":["socketEvents/*"]
+      "@socketEvents/*":["socketEvents/*"],
+      "@handlers/*":["websocket/handlers/*"],
+      "@models/*":["models/*"],
+      "@constants/*":["shared/*"]
     },
     "strict": true,
     "esModuleInterop": true,

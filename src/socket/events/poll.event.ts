@@ -1,5 +1,5 @@
-import { poll } from "models/poll.model";
-import { POLL_EVENTS } from "shared/constants";
+import { poll } from "@models/poll.model";
+import { POLL_EVENTS } from "@constants/constants";
 import { Server, Socket } from "socket.io";
 
 
@@ -19,7 +19,7 @@ export const registerPollEvents = (io:Server,socket:Socket) : void =>{
     }
     
     option.vote+=1
-    
+   
     io.emit(POLL_EVENTS.POLL_UPDATE,option)
   })
 }
