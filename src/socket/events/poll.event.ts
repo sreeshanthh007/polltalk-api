@@ -21,5 +21,16 @@ export const registerPollEvents = (io:Server,socket:Socket) : void =>{
     option.vote+=1
    
     io.emit(POLL_EVENTS.POLL_UPDATE,option)
+  });
+  
+  socket.on(POLL_EVENTS.POLL_UNVOTE,(optionId:string)=>{
+    
+    const option = poll.options.find((opt)=>opt.id==Number(optionId))
+    console.log("options s",option)
+    if(!option)return
+    
+    option.vote-=1
+    
+    io.emit(POLL_EVENTS.POLL_UPDATE,option)
   })
 }

@@ -13,7 +13,7 @@ export const  registerChatEvents = (io:Server,socket:Socket) : void =>{
     socket.on(CHAT_EVENTS.SEND_MESSAGE,(text:string)=>{
       
       const username = getUserName(socket.id)
-      
+
       if(!username){
         return 
       }
@@ -23,7 +23,7 @@ export const  registerChatEvents = (io:Server,socket:Socket) : void =>{
         text,
         time:new Date()
       }
-      console.log("newmessage",newMessage)
+      
       
       messages.push(newMessage);
       

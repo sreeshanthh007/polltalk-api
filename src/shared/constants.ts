@@ -12,5 +12,6 @@ export const CHAT_EVENTS = {
 export const POLL_EVENTS = {
   POLL_DATA:"poll:data",
   POLL_VOTE:"poll:vote",
+  POLL_UNVOTE:"poll:unvote",
   POLL_UPDATE:"poll:update"
 }
