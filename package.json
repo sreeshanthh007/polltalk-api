@@ -9,6 +9,15 @@
     "build": "tsc",
     "start": "node dist/server.js"
   },
+  "_moduleAliases": {
+    "@controllers": "dist/controllers",
+    "@socket": "dist/socket",
+    "@websocket": "dist/websocket",
+    "@socketEvents": "dist/socket/events",
+    "@handlers": "dist/websocket/handlers",
+    "@models": "dist/models",
+    "@constants": "dist/shared"
+  },
   "author": "sreeshanthh007",
   "license": "ISC",
   "dependencies": {
@@ -17,6 +26,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "module-alias": "^2.2.3",
     "socket.io": "^4.8.1",
     "tsconfig-paths": "^4.2.0"
   },

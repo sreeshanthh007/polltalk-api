@@ -10,7 +10,8 @@
     "paths": {
       "@controllers/*":["controllers/*"],
       "@socket/*":["socket/*"],
-      "@socketEvents/*":["socketEvents/*"],
+      "@websocket/*":["websocket/*"],
+      "@socketEvents/*": ["socket/events/*"],
       "@handlers/*":["websocket/handlers/*"],
       "@models/*":["models/*"],
       "@constants/*":["shared/*"]

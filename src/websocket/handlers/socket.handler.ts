@@ -1,5 +1,5 @@
 import { CHAT_EVENTS } from "@constants/constants";
-import { addUser, removeUser, users } from "@models/user.model";
+import { addUser, removeUser } from "@models/user.model";
 import { registerChatEvents } from "@socket/events/chat.event";
 import { registerPollEvents } from "@socket/events/poll.event";
 import { Server, Socket } from "socket.io";

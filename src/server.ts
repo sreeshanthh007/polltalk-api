@@ -1,9 +1,9 @@
-
+import "module-alias/register"
 import express from "express"
 import cors from "cors"
 import http from "http"
 import dotenv from "dotenv"
-import { SocketServer } from "websocket/socket.server"
+import { SocketServer } from "@websocket/socket.server"
 
 
 
